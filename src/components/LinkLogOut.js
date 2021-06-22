@@ -1,13 +1,15 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 
-function LinkLogOut({setIsAuthenticated}) {
+function LinkLogOut({setIsAuthenticated, children, ...props}) {
     const handlerLogOut = () => {
         sessionStorage.removeItem("token");
         setIsAuthenticated(false)
     }
     return (
-        <Link onClick={handlerLogOut} to="/" >LOG-OUT</Link>
+        <Link onClick={handlerLogOut} to="/" {...props} >
+            {children}
+        </Link>
     )
 }
 

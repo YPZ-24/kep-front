@@ -12,3 +12,7 @@ export const loginUserSchema = yup.object().shape({
     email: emailUserSchema.required(),
     password: passwordUserSchema.required(),
 })
+
+export const addAdminSchema = yup.object().shape({
+    email: emailUserSchema.required(),
+})

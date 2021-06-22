@@ -5,6 +5,7 @@ import {CssBaseline} from '@material-ui/core'
 import {ThemeProvider} from '@material-ui/core/styles';
 import themeConfig from './themeConfig'
 import { SnackbarProvider } from 'notistack';
+import './style/index.css'
 
 ReactDOM.render(
   <ThemeProvider theme={themeConfig}>

@@ -10,6 +10,7 @@ function MyInput({label, name, ...props}) {
     return (
         <>
             <TextField 
+                margin="none"
                 fullWidth
                 label={label} 
                 name={name} 

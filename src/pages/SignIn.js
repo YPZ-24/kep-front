@@ -7,11 +7,13 @@ import {loginUserSchema} from '../utils/schemas/user'
 import { Container, Typography } from '@material-ui/core'
 import {useSnackbar} from 'notistack'
 import { useHistory } from 'react-router-dom';
+import formStyles from '../style/formStyles'
 
 function SignIn({setIsAuthenticated}) {
 
     const { enqueueSnackbar } = useSnackbar();
     const history = useHistory();
+    const formClasses = formStyles();
 
     const handlerClick = async (values) => {
         const res = await MyFetch({method: 'POST', path: '/users/login', body: values})
@@ -34,7 +36,7 @@ function SignIn({setIsAuthenticated}) {
                 onSubmit={(values)=>handlerClick(values)}
                 validationSchema={loginUserSchema}
             >
-                <Form>
+                <Form className={formClasses.form}>
                     <MyInput name="email" type="email" placeholder="Email" />
                     <MyInput name="password" type="password" placeholder="Password" />
                     <MyButton type="submit" value="Entrar" />

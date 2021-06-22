@@ -1,9 +1,18 @@
 import React from 'react'
-import Button from '@material-ui/core/Button'
+import {Button, makeStyles} from '@material-ui/core'
+
+const useStyles = makeStyles((theme) => ({
+    button: {
+        marginTop: theme.spacing(2)
+    },
+}));
 
 function MyButton({value, ...props}) {
+
+    const classes = useStyles();
+
     return (
-        <Button fullWidth variant="contained" color="default"  {...props}>
+        <Button className={classes.button} fullWidth variant="contained" color="secondary"  {...props}>
             {value}
         </Button>
     )
